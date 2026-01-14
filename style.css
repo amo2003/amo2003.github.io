@@ -10,6 +10,22 @@
   overflow: hidden;
 }
 
+/* Remove underline & default link styling for project cards */
+.experience-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Prevent underline on hover, focus, active */
+.experience-link:hover,
+.experience-link:focus,
+.experience-link:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+
 .copyright-notice::before {
   content: '';
   position: absolute;
@@ -359,6 +375,7 @@ section h2::after {
   justify-content: center;
   transition: left 2s ease-in-out;
 }
+
 
 /* Alternative: If you want to show full image without cropping */
 .slide.full-image {
