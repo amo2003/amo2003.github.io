@@ -703,11 +703,121 @@
     <!-- Copyright Notice -->
     <div class="copyright-notice">
       <div class="container">
-        <p>&copy, 2025 Amod Indupa. All rights reserved.</p>
+        <p>copy 2025 Amod Indupa. All rights reserved.</p>
       </div>
     </div>
   </main>
 
   <script src="script.js"></script>
+  <!-- Notification Container -->
+<div id="notification-container"></div>
+
+<style>
+/* Notification Styles */
+#notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  min-width: 250px;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideIn 0.5s forwards, fadeOut 0.5s 3.5s forwards;
+}
+
+.notification.success { background: #28a745; }
+.notification.error   { background: #dc3545; }
+
+.notification i {
+  margin-right: 10px;
+}
+
+/* Animations */
+@keyframes slideIn {
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateX(100%); }
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with your public key
+  emailjs.init('98tA3GrZ8CKCHsRoe');
+
+  // Function to show notifications
+  function showNotification(message, type = 'success') {
+    const container = document.getElementById('notification-container');
+    const notif = document.createElement('div');
+    notif.className = `notification ${type}`;
+    notif.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
+    container.appendChild(notif);
+
+    setTimeout(() => {
+      notif.remove();
+    }, 4000);
+  }
+
+  // EmailJS form submission
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Basic validation
+        const name = this.name.value.trim();
+        const email = this.email.value.trim();
+        const subject = this.subject.value.trim();
+        const message = this.message.value.trim();
+
+        if (!name || !email || !subject || !message) {
+          showNotification('Please fill in all fields.', 'error');
+          return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showNotification('Please enter a valid email address.', 'error');
+          return;
+        }
+
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+        submitBtn.disabled = true;
+
+        emailjs.sendForm('service_0fe7u5s', 'template_a11y5na', this, '98tA3GrZ8CKCHsRoe')
+          .then(() => {
+            showNotification("Message sent successfully! I'll get back to you soon.", 'success');
+            contactForm.reset();
+          })
+          .catch((error) => {
+            console.error('EmailJS Error:', error);
+            showNotification('Oops! Something went wrong. Please try again.', 'error');
+          })
+          .finally(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+          });
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
