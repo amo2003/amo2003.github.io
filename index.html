@@ -6,51 +6,6 @@
   <title>Amod Indupa</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    emailjs.init('98tA3GrZ8CKCHsRoe'); // Your EmailJS Public Key
-  </script>
-  <style>
-    /* Notification Styles */
-    #notification-container {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 9999;
-    }
-
-    .notification {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      min-width: 250px;
-      margin-bottom: 10px;
-      padding: 15px 20px;
-      border-radius: 10px;
-      color: #fff;
-      font-family: 'Arial', sans-serif;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      opacity: 0;
-      transform: translateX(100%);
-      animation: slideIn 0.5s forwards, fadeOut 0.5s 3.5s forwards;
-    }
-
-    .notification.success { background: #28a745; }
-    .notification.error   { background: #dc3545; }
-
-    .notification i {
-      margin-right: 10px;
-    }
-
-    @keyframes slideIn {
-      to { transform: translateX(0); opacity: 1; }
-    }
-
-    @keyframes fadeOut {
-      to { opacity: 0; transform: translateX(100%); }
-    }
-  </style>
 </head>
 <body>
   <!-- Mobile Menu Toggle -->
@@ -272,7 +227,277 @@
       <div class="container">
         <h2>Experience & My Projects</h2>
         <div class="experience-grid">
-          <!-- Add all your project cards here -->
+
+          <!--live weather-->
+  <div class="experience-card">
+  <div class="project-image">
+    <img src="images/weather.png" alt="Live Weather Analytics Project" />
+    <div class="project-overlay">
+         <a href="https://github.com/amo2003/Live-Weather-Analytics-" target="_blank" class="experience-link">       
+      <h4>Live Weather Analytics</h4></a>
+      <p>React, Node.js, Auth0, OpenWeatherMap API</p>
+    </div>
+  </div>
+
+  <div class="experience-header">
+    <h3>Live Weather Analytics Dashboard</h3>
+    <span class="company">MERN Stack Project</span>
+    <span class="duration">2026 - January</span>
+  </div>
+
+  <div class="experience-content">
+    <p>A secure web application that provides real-time weather analytics for cities worldwide using OpenWeatherMap API, with user authentication powered by Auth0.</p>
+    <ul>
+      <li>Secure User Registration & Login with Auth0 (OAuth 2.0, MFA)</li>
+      <li>Fetch and Display Real-Time Weather Data via OpenWeatherMap API</li>
+      <li>Compute Custom Comfort Index Score for Cities</li>
+      <li>City Ranking & Caching to Reduce API Calls & Improve Performance</li>
+      <li>Responsive and Interactive Dashboard UI built with React</li>
+      <li>Clean REST API Architecture & Error Handling on Backend (Node.js)</li>
+    </ul>
+  </div>
+</div>
+
+
+          <!--Note-->
+<div class="experience-card">
+  <div class="project-image">
+    <img src="images/note.png" alt="Daily Notebook Project" />
+    <div class="project-overlay">
+    <a href="https://github.com/amo2003/Secure-Daily-Notes-Management-System-" target="_blank" class="experience-link">       
+      <h4>Daily Notebook</h4></a>
+      <p>Python, Django, PostgreSQL, JWT Authentication</p>
+    </div>
+  </div>
+
+  <div class="experience-header">
+    <h3>Daily Notebook Application</h3>
+    <span class="company">Python Project</span>
+    <span class="duration">2026 - January</span>
+  </div>
+
+  <div class="experience-content">
+    <p>A secure backend-driven web application for creating, managing, and organizing daily notes, powered by Django and PostgreSQL </p>
+    <ul>
+      <li>User Registration & Login with JWT Authentication</li>
+      <li>Create, Read, Update, Delete (CRUD) Notes</li>
+      <li>Organize Notes by Categories and Dates</li>
+      <li>Database Modeling & Query Optimization using Django ORM</li>
+      <li>Form Validation, Access Control, and Secure Data Handling</li>
+      <li>Clean MVC Architecture with Django Views, Templates, and URL Routing</li>
+    </ul>
+  </div>
+</div>
+
+          
+      <!-- Food Posting Web Application -->
+<div class="experience-card">
+  <div class="project-image">
+    <img src="images/food.png" alt="Food Posting Web Application Project" />
+    <div class="project-overlay">
+    <a href="https://github.com/amo2003/Food-Review-Community-SpringBoot-" target="_blank" class="experience-link">       
+      <h4>Food Posting Web Application</h4></a>
+      <p>Spring Boot, MySQL, REST API</p>
+    </div>
+  </div>
+
+  <div class="experience-header">
+    <h3>Food Review Community</h3>
+    <span class="company">Spring Boot Project</span>
+    <span class="duration">2025 - December</span>
+  </div>
+
+  <div class="experience-content">
+    <p>A backend-driven web application that allows users to upload food photos, add descriptions, and manage their posts securely.</p>
+    <ul>
+      <li>User Registration & Authentication</li>
+      <li>Food Photo Upload & Storage</li>
+      <li>Post Management (Add, Update, View)</li>
+      <li>Like, Comment & Share the posts</li>
+      <li>Clean REST API Architecture</li>
+      <li>Exception Handling & Validation</li>
+    </ul>
+  </div>
+</div>
+
+          <div class="experience-card">
+            <div class="project-image">
+              <img src="images/Screenshot 2025-10-09 234311.png" alt="Salon Web Application Project" />
+              <div class="project-overlay">
+              <a href="https://github.com/amo2003/liyo-salon-website" target="_blank" class="experience-link">       
+                <h4>Online Salon Appointment Booking System </h4></a>
+                <p>Spring Boot, React, MySQL, CSS</p>
+              </div>
+            </div>
+            <div class="experience-header">
+              <h3>Online Salon Appointment Booking System</h3>
+              <span class="company">SprinBoot Web Project</span>
+              <span class="duration">2025 - October</span>
+            </div>
+            <div class="experience-content">
+               <p>A full-stack web application developed using Spring Boot (Java, MySQL) for the backend and React with CSS for the frontend to streamline salon operations. The system manages appointments, customer feedback, services, and an admin panel for website content. It offers a modern, user-friendly interface with secure booking and interactive features.</p>
+          <ul>
+                  <li>Real-Time Appointment Booking</li>
+          <li>Comprehensive Service Management</li>
+          <li>Interactive Contact & Map Section</li>
+          <li>Secure Customer Feedback & Messaging</li>
+          <li>Admin Panel for Content Management</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Fuel Station Management System -->
+          <div class="experience-card">
+            <div class="project-image">
+              <img src="images/fuel.png" alt="Fuel Station Management System Project" />
+              <div class="project-overlay">
+              <a href="https://github.com/amo2003/Fuel-Station-Management-System-MERN-Stack" target="_blank" class="experience-link">       
+                <h4>Fuel Station Management System</h4></a>
+                <p>React, Node.js, MongoDB</p>
+              </div>
+            </div>
+            <div class="experience-header">
+              <h3>Fuel Station Management System</h3>
+              <span class="company">MERN Stack Project</span>
+              <span class="duration">2025 - August</span>
+            </div>
+            <div class="experience-content">
+              <p>A full-stack web application developed using the MERN stack to digitize and streamline fuel station operations.</p>
+              <ul>
+                <li>Real-Time Stock Display</li>
+                <li>Efficient Stock Management</li>
+                <li>Integrated EV Support</li>
+                <li>Secure Payment Processing</li>
+                <li>Admin & Staff Roles</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- EV Charging Station App -->
+          <div class="experience-card">
+            <div class="project-image">
+              <img src="images/appE.png" alt="EV Charging Station Search App (UI Design)" />
+              <div class="project-overlay">
+                <h4>EV Charging Station Search App (UI Design)</h4>
+                <p>Figma</p>
+              </div>
+            </div>
+            <div class="experience-header">
+              <h3>EV Charging Station Search App (UI Design)</h3>
+              <span class="company">Figma Design</span>
+              <span class="duration">2025 - August</span>
+            </div>
+            <div class="experience-content">
+              <p>UI/UX design prototype for EV charging station search and booking app.</p>
+              <ul>
+                <li>Seamless Navigation</li>
+                <li>Modern Visual Design</li>
+                <li>User-Centric Approach</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Fuel Station Management App UI -->
+          <div class="experience-card">
+            <div class="project-image">
+              <img src="images/app.png" alt="Fuel Station Management App (UI Design)" />
+              <div class="project-overlay">
+                <h4>Fuel Station Management App (UI Design)</h4>
+                <p>Figma</p>
+              </div>
+            </div>
+            <div class="experience-header">
+              <h3>Fuel Station Management App (UI Design)</h3>
+              <span class="company">Figma Design</span>
+              <span class="duration">2025 - August</span>
+            </div>
+            <div class="experience-content">
+              <p>Modern UI design for fuel station management system, focusing on usability and responsiveness.</p>
+              <ul>
+                <li>User-Friendly Design</li>
+                <li>Visual Consistency</li>
+                <li>Efficient Workflow</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Hospital Management System -->
+          <div class="experience-card">
+            <div class="project-image">
+              <img src="images/hos.png" alt="Hospital Management System Project" />
+              <div class="project-overlay">
+              <a href="https://github.com/amo2003/Hospital-Management-System-MERN-Stack-" target="_blank" class="experience-link">       
+                <h4>Hospital Management System</h4></a>
+                <p>React, Node.js, MongoDB</p>
+              </div>
+            </div>
+            <div class="experience-header">
+              <h3>Hospital Management System</h3>
+              <span class="company">MERN Stack Project</span>
+              <span class="duration">2025 - July</span>
+            </div>
+            <div class="experience-content">
+              <p>Full-stack web application to manage hospital operations efficiently.</p>
+              <ul>
+                <li>Efficient Hospital Operations</li>
+                <li>Real-Time Data Access</li>
+                <li>User-Friendly Interface</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Hotel Management System -->
+          <div class="experience-card">
+            <div class="project-image">
+              <img src="images/ho.png" alt="Hotel Management System Project" />
+              <div class="project-overlay">
+              <a href="https://github.com/amo2003/Online-Hotel-Reservation-System" target="_blank" class="experience-link">       
+                <h4>Hotel Management System</h4></a>
+                <p>Java, HTML, CSS, JavaScript</p>
+              </div>
+            </div>
+            <div class="experience-header">
+              <h3>Hotel Management System</h3>
+              <span class="company">Java Project</span>
+              <span class="duration">2025 - April</span>
+            </div>
+            <div class="experience-content">
+              <p>Web-based application for room booking and reservation management.</p>
+              <ul>
+                <li>Easy Booking</li>
+                <li>Real-Time Room Availability</li>
+                <li>Streamlined Management</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Online Train Reservation System -->
+          <div class="experience-card">
+            <div class="project-image">
+              <img src="images/tr.png" alt="Online Train Reservation System Project" />
+              <div class="project-overlay">
+                <a href="https://github.com/amo2003/Online-Train-Reservation-System" target="_blank" class="experience-link">       
+                <h4>Online Train Reservation System</h4></a>
+                <p>Java, MySQL, HTML, CSS</p>
+              </div>
+            </div>
+            <div class="experience-header">
+              <h3>Online Train Reservation System</h3>
+              <span class="company">Java Project</span>
+              <span class="duration">2025 - March</span>
+            </div>
+            <div class="experience-content">
+              <p>Web-based application to book train tickets with real-time seat availability.</p>
+              <ul>
+                <li>Real-Time Seat Availability</li>
+                <li>Convenient Booking</li>
+                <li>Efficient Management</li>
+              </ul>
+            </div>
+          </div>
+
+        
+
         </div>
       </div>
     </section>
@@ -282,7 +507,82 @@
       <div class="container">
         <h2>Certificates & Achievements</h2>
         <div class="certificates-grid">
-          <!-- Add all your certificate cards here -->
+          
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="images/Doker.png" alt="Docker" />
+            </div>
+            <div class="certificate-content">
+              <h3>Getting Started With Docker</h3>
+              <p>SimpliLearn Platform.</p>
+              <span class="certificate-date">2026</span>
+            </div>
+          </div>
+          
+           <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="images/react.png" alt="React for Beginners Certificate" />
+            </div>
+            <div class="certificate-content">
+              <h3>React for Beginners</h3>
+              <p>Simpli Learn Platform</p>
+              <span class="certificate-date">2025</span>
+            </div>
+          </div>
+          
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="images/AI.png" alt="Introduction to Generative AI Certificate" />
+            </div>
+            <div class="certificate-content">
+              <h3>Introduction to Generative AI Studio</h3>
+              <p>Google Cloud Platform</p>
+              <span class="certificate-date">2025</span>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="images/python B.jfif" alt="python for B" />
+            </div>
+            <div class="certificate-content">
+              <h3>Python For Beginners </h3>
+              <p>Open & Distance Learning Platform, University of Moratuwa.</p>
+              <span class="certificate-date">2023</span>
+            </div>
+          </div>
+
+          
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="images/uom1.png" alt="Python Programming Certificate" />
+            </div>
+            <div class="certificate-content">
+              <h3>Python Programming</h3>
+              <p>Open & Distance Learning Platform, University of Moratuwa.</p>
+              <span class="certificate-date">2023</span>
+            </div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="images/uom2.png" alt="Front-End Web Development Certificate" />
+            </div>
+            <div class="certificate-content">
+              <h3>Front-End Web Development</h3>
+              <p>Open & Distance Learning Platform, University of Moratuwa.</p>
+              <span class="certificate-date">2023</span>
+            </div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="images/uom3.png" alt="Web Design for Beginners Certificate" />
+            </div>
+            <div class="certificate-content">
+              <h3>Web Design for Beginners</h3>
+              <p>Open & Distance Learning Platform, University of Moratuwa.</p>
+              <span class="certificate-date">2023</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -292,7 +592,34 @@
       <div class="container">
         <h2>Memories & Gallery</h2>
         <div class="memories-grid">
-          <!-- Add all memory items here -->
+          <div class="memory-item">
+            <img src="images/p3.png" alt="University Aururdu Celebration" />
+            <div class="memory-overlay">
+              <h3>University Aururdu Celebration</h3>
+              <p>Great moments with friends at SLIIT</p>
+            </div>
+          </div>
+          <div class="memory-item">
+            <img src="images/p1.png" alt="University Annual GetTogether" />
+            <div class="memory-overlay">
+              <h3>University Annual GetTogether</h3>
+              <p>Enjoy Moment with Friends</p>
+            </div>
+          </div>
+          <div class="memory-item">
+            <img src="images/p2.png" alt="Trip to Meemure Village" />
+            <div class="memory-overlay">
+              <h3>Trip to Meemure Village</h3>
+              <p>Enjoy Moment with University Friends</p>
+            </div>
+          </div>
+          <div class="memory-item">
+            <img src="images/p6.png" alt="First Day in University" />
+            <div class="memory-overlay">
+              <h3>First Day in University</h3>
+              <p>Beginning of New Chapter</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -303,7 +630,49 @@
         <h2>Get In Touch</h2>
         <div class="contact-content">
           <div class="contact-info">
-            <!-- Contact details here -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <p>amodindupa@gmail.com</p>
+                <a href="mailto:amodindupa@gmail.com">Send Email</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Phone</h3>
+                <p>+94 76 677 3745</p>
+                <a href="tel:+94771234567">Call Now</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Location</h3>
+                <p>Galle, Sri Lanka</p>
+                <a href="https://maps.google.com/?q=Galle,Sri+Lanka" target="_blank">View on Map</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-calendar"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Availability</h3>
+                <p>Available for Projects</p>
+                <a href="#experience">View My Work</a>
+              </div>
+            </div>
           </div>
           
           <div class="contact-form">
@@ -330,77 +699,15 @@
         </div>
       </div>
     </section>
-
+    
     <!-- Copyright Notice -->
     <div class="copyright-notice">
       <div class="container">
-        <p>copy; 2025 Amod Indupa. All rights reserved.</p>
+        <p>&copy, 2025 Amod Indupa. All rights reserved.</p>
       </div>
     </div>
   </main>
 
-  <!-- Notification Container -->
-  <div id="notification-container"></div>
-
-  <!-- Scripts -->
   <script src="script.js"></script>
-  <script>
-    // Function to show custom notifications
-    function showNotification(message, type = 'success') {
-      const container = document.getElementById('notification-container');
-      const notif = document.createElement('div');
-      notif.className = `notification ${type}`;
-      notif.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
-      container.appendChild(notif);
-      setTimeout(() => notif.remove(), 4000);
-    }
-
-    // EmailJS contact form
-    document.addEventListener('DOMContentLoaded', function() {
-      const contactForm = document.getElementById('contactForm');
-
-      if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-
-          const formData = new FormData(this);
-          const name = formData.get('name').trim();
-          const email = formData.get('email').trim();
-          const subject = formData.get('subject').trim();
-          const message = formData.get('message').trim();
-
-          if (!name || !email || !subject || !message) {
-            showNotification('Please fill in all fields.', 'error');
-            return;
-          }
-
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(email)) {
-            showNotification('Please enter a valid email address.', 'error');
-            return;
-          }
-
-          const submitBtn = this.querySelector('.submit-btn');
-          const originalText = submitBtn.innerHTML;
-          submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
-          submitBtn.disabled = true;
-
-          emailjs.sendForm('service_0fe7u5s', 'template_a11y5na', this, '98tA3GrZ8CKCHsRoe')
-            .then(() => {
-              showNotification("Message sent successfully! I'll get back to you soon.", 'success');
-              contactForm.reset();
-            })
-            .catch((error) => {
-              console.error('EmailJS Error:', error);
-              showNotification('Oops! Something went wrong. Please try again.', 'error');
-            })
-            .finally(() => {
-              submitBtn.innerHTML = originalText;
-              submitBtn.disabled = false;
-            });
-        });
-      }
-    });
-  </script>
 </body>
 </html>
