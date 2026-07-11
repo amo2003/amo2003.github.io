@@ -2,825 +2,463 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Amod Indupa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amod Indupa — Software Engineer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
-  <!-- Mobile Menu Toggle -->
-  <div class="mobile-menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  
-  <!-- Sidebar -->
-  <aside class="sidebar">
+
+  <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <aside class="sidebar" id="sidebar">
     <div class="profile">
-      <img src="images/new p1.jpg" alt="Amod Indupa Profile" />
+      <div class="profile-img-wrapper">
+        <img src="images/new p1.jpg" alt="Amod Indupa" />
+        <div class="status-dot" title="Available for work"></div>
+      </div>
       <h2>Amod Indupa</h2>
-      <p>Undergraduate Student from Sri Lanka.</p>
+      <p class="profile-role">Software Engineer</p>
+      <p class="location"><i class="fas fa-map-marker-alt"></i> Galle, Sri Lanka</p>
     </div>
     <nav>
       <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li> 
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">My Projects</a></li>
-        <li><a href="#certificates">Certificates</a></li>
-        <li><a href="#memories">Memories</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home"         class="nav-link active"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="#about"        class="nav-link"><i class="fas fa-user"></i><span>About</span></a></li>
+        <li><a href="#skills"       class="nav-link"><i class="fas fa-code"></i><span>Skills</span></a></li>
+        <li><a href="#education"    class="nav-link"><i class="fas fa-graduation-cap"></i><span>Education</span></a></li>
+        <li><a href="#experience"   class="nav-link"><i class="fas fa-briefcase"></i><span>Projects</span></a></li>
+        <li><a href="#certificates" class="nav-link"><i class="fas fa-certificate"></i><span>Certificates</span></a></li>
+        <li><a href="#memories"     class="nav-link"><i class="fas fa-images"></i><span>Memories</span></a></li>
+        <li><a href="#contact"      class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
       </ul>
     </nav>
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/amod-indupa-739a74293/"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/amo2003"><i class="fab fa-github"></i></a>
-      <a href="https://www.facebook.com/amod-indupa-739a74293"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/amod_5_2/"><i class="fab fa-instagram"></i></a>
-      <a href="mailto:amodindupa@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/amod-indupa-739a74293/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/amo2003" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.facebook.com/amod-indupa-739a74293" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/amod_5_2/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:amodindupa@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </aside>
 
-  <!-- Main Content -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
   <main class="content">
-    <!-- Home Section -->
+
+    <!-- HOME -->
     <section id="home" class="home-section">
-      <div class="slider">
-        <div class="slide full-image active" style="background-image: url('images/new p1.jpg');">
-          <div class="text">
-            <h1>Hi! I'm Amod</h1>
-            <p>I am an Undergraduate Software Engineer Student</p>
-          </div>
+      <canvas id="heroCanvas"></canvas>
+      <div class="hero-content">
+        <span class="hero-greeting">Hello, I'm</span>
+        <h1 class="hero-name">Amod Indupa</h1>
+        <p class="hero-typed"><span id="typed-text"></span><span class="cursor">|</span></p>
+        <p class="hero-desc">Undergraduate Software Engineer from Sri Lanka — building modern, efficient, and user-friendly applications.</p>
+        <div class="hero-btns">
+          <a href="#experience" class="btn-primary"><i class="fas fa-rocket"></i> View My Work</a>
+          <a href="#contact"    class="btn-outline"><i class="fas fa-paper-plane"></i> Hire Me</a>
         </div>
-        <div class="slide full-image" style="background-image: url('images/my1.png');">
-          <div class="text">
-            <h1>Creative Developer</h1>
-            <p>I love building modern web applications & innovative solutions</p>
-          </div>
+        <div class="hero-stats">
+          <div class="hstat"><span class="hstat-n">10+</span><span class="hstat-l">Projects</span></div>
+          <div class="hstat-div"></div>
+          <div class="hstat"><span class="hstat-n">3+</span><span class="hstat-l">Years Learning</span></div>
+          <div class="hstat-div"></div>
+          <div class="hstat"><span class="hstat-n">7+</span><span class="hstat-l">Certificates</span></div>
         </div>
       </div>
-      <div class="dots"></div>
+      <div class="hero-img-wrap">
+        <div class="hero-img-ring"></div>
+        <img src="images/new p1.jpg" alt="Amod Indupa" class="hero-img" />
+      </div>
+      <a href="#about" class="scroll-hint"><i class="fas fa-chevron-down"></i></a>
     </section>
 
-    <!-- About Section -->
+    <!-- ABOUT -->
     <section id="about" class="about-section">
       <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get To Know Me</span>
+          <h2>About Me</h2>
+        </div>
         <div class="about-content">
-          <div class="about-text">
-            <h2>Who Am I?</h2>
-            <p>
-              Hi! I'm <strong>Amod Indupa</strong>, an undergraduate Software Engineering student with a strong interest in building modern, efficient, and user-friendly applications. 
-              I enjoy learning new technologies and applying my knowledge to practical projects that solve real-world problems.
-            </p>
-            <p>
-              Outside of academics, I love exploring new places, capturing memories through photography, watching films, and experimenting with technologies that fuel my curiosity. 
-              I am eager to grow my skills further and contribute to impactful projects in the field of software development.
-            </p>
-          </div>
           <div class="about-image">
-            <img src="images/NEw.jpg" alt="About Amod Indupa" />
+            <div class="img-frame">
+              <img src="images/NEw.jpg" alt="Amod Indupa" />
+            </div>
+            <div class="about-stats">
+              <div class="stat"><span class="stat-num" data-target="10">0</span><span class="stat-label">Projects</span></div>
+              <div class="stat"><span class="stat-num" data-target="3">0</span><span class="stat-label">Years Learning</span></div>
+              <div class="stat"><span class="stat-num" data-target="7">0</span><span class="stat-label">Certificates</span></div>
+            </div>
+          </div>
+          <div class="about-text">
+            <h3>I'm <span class="highlight">Amod Indupa</span></h3>
+            <p>An undergraduate Software Engineering student with a strong interest in building modern, efficient, and user-friendly applications. I enjoy learning new technologies and applying my knowledge to practical projects that solve real-world problems.</p>
+            <p>Outside of academics, I love exploring new places, capturing memories through photography, watching films, and experimenting with technologies that fuel my curiosity.</p>
+            <div class="about-tags">
+              <span><i class="fas fa-layer-group"></i> Full-Stack Dev</span>
+              <span><i class="fas fa-paint-brush"></i> UI/UX Design</span>
+              <span><i class="fab fa-github"></i> Open Source</span>
+              <span><i class="fas fa-puzzle-piece"></i> Problem Solving</span>
+            </div>
+            <a href="#contact" class="btn-primary">Let's Talk</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- SKILLS -->
     <section id="skills" class="skills-section">
       <div class="container">
-        <h2>OVERVIEW OF MY EXPERTISE</h2>
+        <div class="section-header">
+          <span class="section-tag">What I Know</span>
+          <h2>Skills &amp; Expertise</h2>
+        </div>
         <div class="expertise-grid">
-          <!-- Programming Languages -->
           <div class="expertise-card">
-            <div class="hexagon-icon blue">
-              <i class="fas fa-code"></i>
-            </div>
-            <h3>PROGRAMMING LANGUAGES</h3>
-            <ul class="skill-list">
-              <li>Java</li>
-              <li>Python</li>
-              <li>JavaScript</li>
-              <li>C++</li>
-              <li>C</li>
-            </ul>
+            <div class="card-icon blue"><i class="fas fa-code"></i></div>
+            <h3>Languages</h3>
+            <ul class="skill-list"><li>Java</li><li>Python</li><li>JavaScript</li><li>C++</li><li>C</li></ul>
           </div>
-
-          <!-- Database -->
           <div class="expertise-card">
-            <div class="hexagon-icon red">
-              <i class="fas fa-database"></i>
-            </div>
-            <h3>DATABASE</h3>
-            <ul class="skill-list">
-              <li>MySQL</li>
-              <li>MySQL WorkBench</li>
-              <li>MongoDB</li>
-              <li>PostgreSQL</li>
-              <li>Firebase</li>
-            </ul>
+            <div class="card-icon red"><i class="fas fa-database"></i></div>
+            <h3>Databases</h3>
+            <ul class="skill-list"><li>MySQL</li><li>MongoDB</li><li>PostgreSQL</li><li>Firebase</li></ul>
           </div>
-
-          <!-- Frameworks & Runtimes -->
           <div class="expertise-card">
-            <div class="hexagon-icon orange">
-              <i class="fas fa-cube"></i>
-            </div>
-            <h3>FRAMEWORKS & RUNTIMES</h3>
-            <ul class="skill-list">
-              <li>Spring Boot</li>
-              <li>React</li>
-              <li>Express.js</li>
-              <li>Node.js</li>
-              <li>Django</li>
-            </ul>
+            <div class="card-icon orange"><i class="fas fa-cube"></i></div>
+            <h3>Frameworks</h3>
+            <ul class="skill-list"><li>Spring Boot</li><li>React</li><li>Express.js</li><li>Node.js</li><li>Django</li></ul>
           </div>
-
-          <!-- Tools -->
           <div class="expertise-card">
-            <div class="hexagon-icon teal">
-              <i class="fas fa-network-wired"></i>
-            </div>
+            <div class="card-icon teal"><i class="fas fa-tools"></i></div>
             <h3>Tools</h3>
-            <ul class="skill-list">
-              <li>Git</li>
-              <li>GitHub</li>
-              <li>VS Code</li>
-              <li>Postman</li>
-              <li>Figma</li>
-            </ul>
+            <ul class="skill-list"><li>Git &amp; GitHub</li><li>VS Code</li><li>Postman</li><li>Figma</li><li>Docker</li></ul>
           </div>
-          
-          <!-- FrontEnd & BackEnd -->
           <div class="expertise-card">
-            <div class="hexagon-icon dark-blue">
-              <i class="fas fa-comments"></i>
-            </div>
-            <h3>FrontEnd & BackEnd</h3>
-            <ul class="skill-list">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Tailwind CSS</li>
-              <li>Bootstrap</li>
-            </ul>
+            <div class="card-icon dark-blue"><i class="fas fa-laptop-code"></i></div>
+            <h3>Frontend</h3>
+            <ul class="skill-list"><li>HTML5 / CSS3</li><li>Tailwind CSS</li><li>Bootstrap</li><li>React</li></ul>
           </div>
-          
-          <!-- Cloud Technologies -->
           <div class="expertise-card">
-            <div class="hexagon-icon purple">
-              <i class="fas fa-cloud"></i>
-            </div>
-            <h3>CLOUD TECHNOLOGIES</h3>
-            <ul class="skill-list">
-              <li>Docker</li>
-            </ul>
+            <div class="card-icon purple"><i class="fas fa-cloud"></i></div>
+            <h3>Cloud &amp; DevOps</h3>
+            <ul class="skill-list"><li>Docker</li><li>REST APIs</li><li>MVC Architecture</li></ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- EDUCATION -->
     <section id="education" class="education-section">
       <div class="container">
-        <h2>My Education</h2>
+        <div class="section-header">
+          <span class="section-tag">My Background</span>
+          <h2>Education</h2>
+        </div>
         <div class="education-timeline">
           <div class="timeline-item">
-            <div class="timeline-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
+            <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
             <div class="timeline-content">
-              <h3>Bachelor of Science(Hons) in Information Technology</h3>
+              <span class="timeline-year">2023 – Present</span>
+              <h3>BSc (Hons) in Information Technology</h3>
               <h4>Sri Lanka Institute of Information Technology</h4>
-              <p class="timeline-date">2023 - Present</p>
               <p>Currently pursuing my degree with a focus on software development, algorithms, and system design.</p>
             </div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-icon">
-              <i class="fas fa-school"></i>
-            </div>
+            <div class="timeline-dot"><i class="fas fa-school"></i></div>
             <div class="timeline-content">
-              <h3>Advanced Level (A/L) - Siridhamma College, Galle.</h3>
-              <h4>Physical Science Stream</h4>
-              <p class="timeline-date">2020 - 2022</p>
-              <p>I completed my Advanced Level examination in the Physical Science stream with C, C, S passes.</p>
+              <span class="timeline-year">2020 – 2022</span>
+              <h3>Advanced Level (A/L)</h3>
+              <h4>Siridhamma College, Galle · Physical Science Stream</h4>
+              <p>Completed A/L examination in the Physical Science stream with C, C, S passes.</p>
             </div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-icon">
-              <i class="fas fa-certificate"></i>
-            </div>
+            <div class="timeline-dot"><i class="fas fa-certificate"></i></div>
             <div class="timeline-content">
-              <h3>Ordinary Level (O/L) - Siridhamma College, Galle.</h3>
-              <h4>General Education</h4>
-              <p class="timeline-date">2019</p>
-              <p>Completed Ordinary Level with distinction in Mathematics and Science subjects.</p>
+              <span class="timeline-year">2019</span>
+              <h3>Ordinary Level (O/L)</h3>
+              <h4>Siridhamma College, Galle</h4>
+              <p>Completed O/L with distinction in Mathematics and Science subjects.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- PROJECTS -->
     <section id="experience" class="experience-section">
       <div class="container">
-        <h2>Experience & My Projects</h2>
+        <div class="section-header light">
+          <span class="section-tag">What I've Built</span>
+          <h2>My Projects</h2>
+        </div>
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="mern">MERN Stack</button>
+          <button class="filter-btn" data-filter="spring">Spring Boot</button>
+          <button class="filter-btn" data-filter="python">Python</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+        </div>
         <div class="experience-grid">
 
-          <!--live weather-->
-  <div class="experience-card">
-  <div class="project-image">
-    <img src="images/weather.png" alt="Live Weather Analytics Project" />
-    <div class="project-overlay">
-         <a href="https://github.com/amo2003/Live-Weather-Analytics-" target="_blank" class="experience-link">       
-      <h4>Live Weather Analytics</h4></a>
-      <p>React, Node.js, Auth0, OpenWeatherMap API</p>
-    </div>
-  </div>
-
-  <div class="experience-header">
-    <h3>Live Weather Analytics Dashboard</h3>
-    <span class="company">MERN Stack Project</span>
-    <span class="duration">2026 - January</span>
-  </div>
-
-  <div class="experience-content">
-    <p>A secure web application that provides real-time weather analytics for cities worldwide using OpenWeatherMap API, with user authentication powered by Auth0.</p>
-    <ul>
-      <li>Secure User Registration & Login with Auth0 (OAuth 2.0, MFA)</li>
-      <li>Fetch and Display Real-Time Weather Data via OpenWeatherMap API</li>
-      <li>Compute Custom Comfort Index Score for Cities</li>
-      <li>City Ranking & Caching to Reduce API Calls & Improve Performance</li>
-      <li>Responsive and Interactive Dashboard UI built with React</li>
-      <li>Clean REST API Architecture & Error Handling on Backend (Node.js)</li>
-    </ul>
-  </div>
-</div>
-
-
-          <!--Note-->
-<div class="experience-card">
-  <div class="project-image">
-    <img src="images/note.png" alt="Daily Notebook Project" />
-    <div class="project-overlay">
-    <a href="https://github.com/amo2003/Secure-Daily-Notes-Management-System-" target="_blank" class="experience-link">       
-      <h4>Daily Notebook</h4></a>
-      <p>Python, Django, PostgreSQL, JWT Authentication</p>
-    </div>
-  </div>
-
-  <div class="experience-header">
-    <h3>Daily Notebook Application</h3>
-    <span class="company">Python Project</span>
-    <span class="duration">2026 - January</span>
-  </div>
-
-  <div class="experience-content">
-    <p>A secure backend-driven web application for creating, managing, and organizing daily notes, powered by Django and PostgreSQL </p>
-    <ul>
-      <li>User Registration & Login with JWT Authentication</li>
-      <li>Create, Read, Update, Delete (CRUD) Notes</li>
-      <li>Organize Notes by Categories and Dates</li>
-      <li>Database Modeling & Query Optimization using Django ORM</li>
-      <li>Form Validation, Access Control, and Secure Data Handling</li>
-      <li>Clean MVC Architecture with Django Views, Templates, and URL Routing</li>
-    </ul>
-  </div>
-</div>
-
-          
-      <!-- Food Posting Web Application -->
-<div class="experience-card">
-  <div class="project-image">
-    <img src="images/food.png" alt="Food Posting Web Application Project" />
-    <div class="project-overlay">
-    <a href="https://github.com/amo2003/Food-Review-Community-SpringBoot-" target="_blank" class="experience-link">       
-      <h4>Food Posting Web Application</h4></a>
-      <p>Spring Boot, MySQL, REST API</p>
-    </div>
-  </div>
-
-  <div class="experience-header">
-    <h3>Food Review Community</h3>
-    <span class="company">Spring Boot Project</span>
-    <span class="duration">2025 - December</span>
-  </div>
-
-  <div class="experience-content">
-    <p>A backend-driven web application that allows users to upload food photos, add descriptions, and manage their posts securely.</p>
-    <ul>
-      <li>User Registration & Authentication</li>
-      <li>Food Photo Upload & Storage</li>
-      <li>Post Management (Add, Update, View)</li>
-      <li>Like, Comment & Share the posts</li>
-      <li>Clean REST API Architecture</li>
-      <li>Exception Handling & Validation</li>
-    </ul>
-  </div>
-</div>
-
-          <div class="experience-card">
-            <div class="project-image">
-              <img src="images/Screenshot 2025-10-09 234311.png" alt="Salon Web Application Project" />
-              <div class="project-overlay">
-              <a href="https://github.com/amo2003/liyo-salon-website" target="_blank" class="experience-link">       
-                <h4>Online Salon Appointment Booking System </h4></a>
-                <p>Spring Boot, React, MySQL, CSS</p>
-              </div>
+          <div class="experience-card" data-category="mern">
+            <div class="project-image"><img src="images/weather.png" alt="Live Weather Analytics" loading="lazy" />
+              <div class="project-overlay"><a href="https://github.com/amo2003/Live-Weather-Analytics-" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a></div>
             </div>
-            <div class="experience-header">
-              <h3>Online Salon Appointment Booking System</h3>
-              <span class="company">SprinBoot Web Project</span>
-              <span class="duration">2025 - October</span>
-            </div>
-            <div class="experience-content">
-               <p>A full-stack web application developed using Spring Boot (Java, MySQL) for the backend and React with CSS for the frontend to streamline salon operations. The system manages appointments, customer feedback, services, and an admin panel for website content. It offers a modern, user-friendly interface with secure booking and interactive features.</p>
-          <ul>
-                  <li>Real-Time Appointment Booking</li>
-          <li>Comprehensive Service Management</li>
-          <li>Interactive Contact & Map Section</li>
-          <li>Secure Customer Feedback & Messaging</li>
-          <li>Admin Panel for Content Management</li>
-              </ul>
+            <div class="card-body">
+              <div class="card-tags"><span>React</span><span>Node.js</span><span>Auth0</span></div>
+              <h3>Live Weather Analytics</h3>
+              <p>Secure web app with real-time weather analytics powered by OpenWeatherMap API and Auth0 authentication.</p>
+              <ul><li>OAuth 2.0 + MFA via Auth0</li><li>Custom Comfort Index Score</li><li>City Ranking &amp; Caching</li></ul>
+              <a href="https://github.com/amo2003/Live-Weather-Analytics-" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
             </div>
           </div>
 
-          <!-- Fuel Station Management System -->
-          <div class="experience-card">
-            <div class="project-image">
-              <img src="images/fuel.png" alt="Fuel Station Management System Project" />
-              <div class="project-overlay">
-              <a href="https://github.com/amo2003/Fuel-Station-Management-System-MERN-Stack" target="_blank" class="experience-link">       
-                <h4>Fuel Station Management System</h4></a>
-                <p>React, Node.js, MongoDB</p>
-              </div>
+          <div class="experience-card" data-category="python">
+            <div class="project-image"><img src="images/note.png" alt="Daily Notebook" loading="lazy" />
+              <div class="project-overlay"><a href="https://github.com/amo2003/Secure-Daily-Notes-Management-System-" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a></div>
             </div>
-            <div class="experience-header">
-              <h3>Fuel Station Management System</h3>
-              <span class="company">MERN Stack Project</span>
-              <span class="duration">2025 - August</span>
-            </div>
-            <div class="experience-content">
-              <p>A full-stack web application developed using the MERN stack to digitize and streamline fuel station operations.</p>
-              <ul>
-                <li>Real-Time Stock Display</li>
-                <li>Efficient Stock Management</li>
-                <li>Integrated EV Support</li>
-                <li>Secure Payment Processing</li>
-                <li>Admin & Staff Roles</li>
-              </ul>
+            <div class="card-body">
+              <div class="card-tags"><span>Django</span><span>PostgreSQL</span><span>JWT</span></div>
+              <h3>Daily Notebook App</h3>
+              <p>Secure backend-driven app for managing daily notes with JWT auth and Django ORM.</p>
+              <ul><li>Full CRUD Notes</li><li>Category &amp; Date Organization</li><li>Clean MVC Architecture</li></ul>
+              <a href="https://github.com/amo2003/Secure-Daily-Notes-Management-System-" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
             </div>
           </div>
 
-          <!-- EV Charging Station App -->
-          <div class="experience-card">
-            <div class="project-image">
-              <img src="images/appE.png" alt="EV Charging Station Search App (UI Design)" />
-              <div class="project-overlay">
-                <h4>EV Charging Station Search App (UI Design)</h4>
-                <p>Figma</p>
-              </div>
+          <div class="experience-card" data-category="spring">
+            <div class="project-image"><img src="images/food.png" alt="Food Review" loading="lazy" />
+              <div class="project-overlay"><a href="https://github.com/amo2003/Food-Review-Community-SpringBoot-" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a></div>
             </div>
-            <div class="experience-header">
-              <h3>EV Charging Station Search App (UI Design)</h3>
-              <span class="company">Figma Design</span>
-              <span class="duration">2025 - August</span>
-            </div>
-            <div class="experience-content">
-              <p>UI/UX design prototype for EV charging station search and booking app.</p>
-              <ul>
-                <li>Seamless Navigation</li>
-                <li>Modern Visual Design</li>
-                <li>User-Centric Approach</li>
-              </ul>
+            <div class="card-body">
+              <div class="card-tags"><span>Spring Boot</span><span>MySQL</span><span>REST API</span></div>
+              <h3>Food Review Community</h3>
+              <p>Backend-driven app for uploading food photos, descriptions, likes, and comments.</p>
+              <ul><li>User Auth &amp; Photo Upload</li><li>Like, Comment &amp; Share</li><li>Exception Handling</li></ul>
+              <a href="https://github.com/amo2003/Food-Review-Community-SpringBoot-" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
             </div>
           </div>
 
-          <!-- Fuel Station Management App UI -->
-          <div class="experience-card">
-            <div class="project-image">
-              <img src="images/app.png" alt="Fuel Station Management App (UI Design)" />
-              <div class="project-overlay">
-                <h4>Fuel Station Management App (UI Design)</h4>
-                <p>Figma</p>
-              </div>
+          <div class="experience-card" data-category="spring">
+            <div class="project-image"><img src="images/Screenshot 2025-10-09 234311.png" alt="Salon Booking" loading="lazy" />
+              <div class="project-overlay"><a href="https://github.com/amo2003/liyo-salon-website" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a></div>
             </div>
-            <div class="experience-header">
-              <h3>Fuel Station Management App (UI Design)</h3>
-              <span class="company">Figma Design</span>
-              <span class="duration">2025 - August</span>
-            </div>
-            <div class="experience-content">
-              <p>Modern UI design for fuel station management system, focusing on usability and responsiveness.</p>
-              <ul>
-                <li>User-Friendly Design</li>
-                <li>Visual Consistency</li>
-                <li>Efficient Workflow</li>
-              </ul>
+            <div class="card-body">
+              <div class="card-tags"><span>Spring Boot</span><span>React</span><span>MySQL</span></div>
+              <h3>Online Salon Booking System</h3>
+              <p>Full-stack salon management app with real-time appointment booking and admin panel.</p>
+              <ul><li>Real-Time Appointment Booking</li><li>Admin Content Management</li><li>Secure Feedback &amp; Messaging</li></ul>
+              <a href="https://github.com/amo2003/liyo-salon-website" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
             </div>
           </div>
 
-          <!-- Hospital Management System -->
-          <div class="experience-card">
-            <div class="project-image">
-              <img src="images/hos.png" alt="Hospital Management System Project" />
-              <div class="project-overlay">
-              <a href="https://github.com/amo2003/Hospital-Management-System-MERN-Stack-" target="_blank" class="experience-link">       
-                <h4>Hospital Management System</h4></a>
-                <p>React, Node.js, MongoDB</p>
-              </div>
+          <div class="experience-card" data-category="mern">
+            <div class="project-image"><img src="images/fuel.png" alt="Fuel Station" loading="lazy" />
+              <div class="project-overlay"><a href="https://github.com/amo2003/Fuel-Station-Management-System-MERN-Stack" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a></div>
             </div>
-            <div class="experience-header">
+            <div class="card-body">
+              <div class="card-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+              <h3>Fuel Station Management</h3>
+              <p>Full-stack MERN app to digitize and streamline fuel station operations.</p>
+              <ul><li>Real-Time Stock Display</li><li>Integrated EV Support</li><li>Admin &amp; Staff Roles</li></ul>
+              <a href="https://github.com/amo2003/Fuel-Station-Management-System-MERN-Stack" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="experience-card" data-category="mern">
+            <div class="project-image"><img src="images/hos.png" alt="Hospital Management" loading="lazy" />
+              <div class="project-overlay"><a href="https://github.com/amo2003/Hospital-Management-System-MERN-Stack-" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a></div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
               <h3>Hospital Management System</h3>
-              <span class="company">MERN Stack Project</span>
-              <span class="duration">2025 - July</span>
-            </div>
-            <div class="experience-content">
-              <p>Full-stack web application to manage hospital operations efficiently.</p>
-              <ul>
-                <li>Efficient Hospital Operations</li>
-                <li>Real-Time Data Access</li>
-                <li>User-Friendly Interface</li>
-              </ul>
+              <p>Full-stack web app to manage hospital operations with real-time data access.</p>
+              <ul><li>Efficient Hospital Operations</li><li>Real-Time Data Access</li><li>User-Friendly Interface</li></ul>
+              <a href="https://github.com/amo2003/Hospital-Management-System-MERN-Stack-" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
             </div>
           </div>
 
-          <!-- Hotel Management System -->
-          <div class="experience-card">
-            <div class="project-image">
-              <img src="images/ho.png" alt="Hotel Management System Project" />
-              <div class="project-overlay">
-              <a href="https://github.com/amo2003/Online-Hotel-Reservation-System" target="_blank" class="experience-link">       
-                <h4>Hotel Management System</h4></a>
-                <p>Java, HTML, CSS, JavaScript</p>
-              </div>
+          <div class="experience-card" data-category="design">
+            <div class="project-image"><img src="images/appE.png" alt="EV Charging App UI" loading="lazy" />
+              <div class="project-overlay"><span class="overlay-tag"><i class="fab fa-figma"></i> Figma Design</span></div>
             </div>
-            <div class="experience-header">
+            <div class="card-body">
+              <div class="card-tags"><span>Figma</span><span>UI/UX</span></div>
+              <h3>EV Charging Station App</h3>
+              <p>UI/UX design prototype for EV charging station search and booking app.</p>
+              <ul><li>Seamless Navigation</li><li>Modern Visual Design</li><li>User-Centric Approach</li></ul>
+            </div>
+          </div>
+
+          <div class="experience-card" data-category="design">
+            <div class="project-image"><img src="images/app.png" alt="Fuel Station App UI" loading="lazy" />
+              <div class="project-overlay"><span class="overlay-tag"><i class="fab fa-figma"></i> Figma Design</span></div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags"><span>Figma</span><span>UI/UX</span></div>
+              <h3>Fuel Station App UI Design</h3>
+              <p>Modern UI design for fuel station management focusing on usability.</p>
+              <ul><li>User-Friendly Design</li><li>Visual Consistency</li><li>Efficient Workflow</li></ul>
+            </div>
+          </div>
+
+          <div class="experience-card" data-category="spring">
+            <div class="project-image"><img src="images/ho.png" alt="Hotel Management" loading="lazy" />
+              <div class="project-overlay"><a href="https://github.com/amo2003/Online-Hotel-Reservation-System" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a></div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags"><span>Java</span><span>HTML</span><span>CSS</span></div>
               <h3>Hotel Management System</h3>
-              <span class="company">Java Project</span>
-              <span class="duration">2025 - April</span>
-            </div>
-            <div class="experience-content">
-              <p>Web-based application for room booking and reservation management.</p>
-              <ul>
-                <li>Easy Booking</li>
-                <li>Real-Time Room Availability</li>
-                <li>Streamlined Management</li>
-              </ul>
+              <p>Web-based app for room booking and reservation management.</p>
+              <ul><li>Easy Booking</li><li>Real-Time Room Availability</li><li>Streamlined Management</li></ul>
+              <a href="https://github.com/amo2003/Online-Hotel-Reservation-System" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
             </div>
           </div>
 
-          <!-- Online Train Reservation System -->
-          <div class="experience-card">
-            <div class="project-image">
-              <img src="images/tr.png" alt="Online Train Reservation System Project" />
-              <div class="project-overlay">
-                <a href="https://github.com/amo2003/Online-Train-Reservation-System" target="_blank" class="experience-link">       
-                <h4>Online Train Reservation System</h4></a>
-                <p>Java, MySQL, HTML, CSS</p>
-              </div>
+          <div class="experience-card" data-category="spring">
+            <div class="project-image"><img src="images/tr.png" alt="Train Reservation" loading="lazy" />
+              <div class="project-overlay"><a href="https://github.com/amo2003/Online-Train-Reservation-System" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a></div>
             </div>
-            <div class="experience-header">
-              <h3>Online Train Reservation System</h3>
-              <span class="company">Java Project</span>
-              <span class="duration">2025 - March</span>
-            </div>
-            <div class="experience-content">
-              <p>Web-based application to book train tickets with real-time seat availability.</p>
-              <ul>
-                <li>Real-Time Seat Availability</li>
-                <li>Convenient Booking</li>
-                <li>Efficient Management</li>
-              </ul>
+            <div class="card-body">
+              <div class="card-tags"><span>Java</span><span>MySQL</span><span>HTML</span></div>
+              <h3>Online Train Reservation</h3>
+              <p>Web-based app to book train tickets with real-time seat availability.</p>
+              <ul><li>Real-Time Seat Availability</li><li>Convenient Booking</li><li>Efficient Management</li></ul>
+              <a href="https://github.com/amo2003/Online-Train-Reservation-System" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
             </div>
           </div>
-
-        
 
         </div>
       </div>
     </section>
 
-    <!-- Certificates Section -->
+    <!-- CERTIFICATES -->
     <section id="certificates" class="certificates-section">
       <div class="container">
-        <h2>Certificates & Achievements</h2>
+        <div class="section-header">
+          <span class="section-tag">My Achievements</span>
+          <h2>Certificates</h2>
+        </div>
         <div class="certificates-grid">
-          
           <div class="certificate-card">
-            <div class="certificate-image">
-              <img src="images/Doker.png" alt="Docker" />
-            </div>
-            <div class="certificate-content">
-              <h3>Getting Started With Docker</h3>
-              <p>SimpliLearn Platform.</p>
-              <span class="certificate-date">2026</span>
-            </div>
-          </div>
-          
-           <div class="certificate-card">
-            <div class="certificate-image">
-              <img src="images/react.png" alt="React for Beginners Certificate" />
-            </div>
-            <div class="certificate-content">
-              <h3>React for Beginners</h3>
-              <p>Simpli Learn Platform</p>
-              <span class="certificate-date">2025</span>
-            </div>
-          </div>
-          
-          <div class="certificate-card">
-            <div class="certificate-image">
-              <img src="images/AI.png" alt="Introduction to Generative AI Certificate" />
-            </div>
-            <div class="certificate-content">
-              <h3>Introduction to Generative AI Studio</h3>
-              <p>Google Cloud Platform</p>
-              <span class="certificate-date">2025</span>
-            </div>
-          </div>
-
-          <div class="certificate-card">
-            <div class="certificate-image">
-              <img src="images/python B.jfif" alt="python for B" />
-            </div>
-            <div class="certificate-content">
-              <h3>Python For Beginners </h3>
-              <p>Open & Distance Learning Platform, University of Moratuwa.</p>
-              <span class="certificate-date">2023</span>
-            </div>
-          </div>
-
-          
-          <div class="certificate-card">
-            <div class="certificate-image">
-              <img src="images/uom1.png" alt="Python Programming Certificate" />
-            </div>
-            <div class="certificate-content">
-              <h3>Python Programming</h3>
-              <p>Open & Distance Learning Platform, University of Moratuwa.</p>
-              <span class="certificate-date">2023</span>
-            </div>
+            <div class="certificate-image"><img src="images/Doker.png" alt="Docker" loading="lazy" /></div>
+            <div class="certificate-content"><h3>Getting Started With Docker</h3><p>SimpliLearn Platform</p><span class="certificate-date">2026</span></div>
           </div>
           <div class="certificate-card">
-            <div class="certificate-image">
-              <img src="images/uom2.png" alt="Front-End Web Development Certificate" />
-            </div>
-            <div class="certificate-content">
-              <h3>Front-End Web Development</h3>
-              <p>Open & Distance Learning Platform, University of Moratuwa.</p>
-              <span class="certificate-date">2023</span>
-            </div>
+            <div class="certificate-image"><img src="images/react.png" alt="React" loading="lazy" /></div>
+            <div class="certificate-content"><h3>React for Beginners</h3><p>SimpliLearn Platform</p><span class="certificate-date">2025</span></div>
           </div>
           <div class="certificate-card">
-            <div class="certificate-image">
-              <img src="images/uom3.png" alt="Web Design for Beginners Certificate" />
-            </div>
-            <div class="certificate-content">
-              <h3>Web Design for Beginners</h3>
-              <p>Open & Distance Learning Platform, University of Moratuwa.</p>
-              <span class="certificate-date">2023</span>
-            </div>
+            <div class="certificate-image"><img src="images/AI.png" alt="Generative AI" loading="lazy" /></div>
+            <div class="certificate-content"><h3>Introduction to Generative AI Studio</h3><p>Google Cloud Platform</p><span class="certificate-date">2025</span></div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image"><img src="images/python B.jfif" alt="Python Beginners" loading="lazy" /></div>
+            <div class="certificate-content"><h3>Python For Beginners</h3><p>University of Moratuwa – ODL</p><span class="certificate-date">2023</span></div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image"><img src="images/uom1.png" alt="Python Programming" loading="lazy" /></div>
+            <div class="certificate-content"><h3>Python Programming</h3><p>University of Moratuwa – ODL</p><span class="certificate-date">2023</span></div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image"><img src="images/uom2.png" alt="Front-End Development" loading="lazy" /></div>
+            <div class="certificate-content"><h3>Front-End Web Development</h3><p>University of Moratuwa – ODL</p><span class="certificate-date">2023</span></div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image"><img src="images/uom3.png" alt="Web Design" loading="lazy" /></div>
+            <div class="certificate-content"><h3>Web Design for Beginners</h3><p>University of Moratuwa – ODL</p><span class="certificate-date">2023</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Memories Section -->
+    <!-- MEMORIES -->
     <section id="memories" class="memories-section">
       <div class="container">
-        <h2>Memories & Gallery</h2>
+        <div class="section-header light">
+          <span class="section-tag">Life Beyond Code</span>
+          <h2>Memories &amp; Gallery</h2>
+        </div>
         <div class="memories-grid">
           <div class="memory-item">
-            <img src="images/p3.png" alt="University Aururdu Celebration" />
-            <div class="memory-overlay">
-              <h3>University Aururdu Celebration</h3>
-              <p>Great moments with friends at SLIIT</p>
-            </div>
+            <img src="images/p3.png" alt="University Avurudu Celebration" loading="lazy" />
+            <div class="memory-overlay"><h3>University Avurudu Celebration</h3><p>Great moments with friends at SLIIT</p></div>
           </div>
           <div class="memory-item">
-            <img src="images/p1.png" alt="University Annual GetTogether" />
-            <div class="memory-overlay">
-              <h3>University Annual GetTogether</h3>
-              <p>Enjoy Moment with Friends</p>
-            </div>
+            <img src="images/p1.png" alt="Annual Get Together" loading="lazy" />
+            <div class="memory-overlay"><h3>University Annual Get Together</h3><p>Enjoy moments with friends</p></div>
           </div>
           <div class="memory-item">
-            <img src="images/p2.png" alt="Trip to Meemure Village" />
-            <div class="memory-overlay">
-              <h3>Trip to Meemure Village</h3>
-              <p>Enjoy Moment with University Friends</p>
-            </div>
+            <img src="images/p2.png" alt="Trip to Meemure" loading="lazy" />
+            <div class="memory-overlay"><h3>Trip to Meemure Village</h3><p>Exploring with university friends</p></div>
           </div>
           <div class="memory-item">
-            <img src="images/p6.png" alt="First Day in University" />
-            <div class="memory-overlay">
-              <h3>First Day in University</h3>
-              <p>Beginning of New Chapter</p>
-            </div>
+            <img src="images/p6.png" alt="First Day at University" loading="lazy" />
+            <div class="memory-overlay"><h3>First Day in University</h3><p>Beginning of a new chapter</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- CONTACT -->
     <section id="contact" class="contact-section">
       <div class="container">
-        <h2>Get In Touch</h2>
+        <div class="section-header">
+          <span class="section-tag">Let's Connect</span>
+          <h2>Get In Touch</h2>
+        </div>
         <div class="contact-content">
           <div class="contact-info">
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Email</h3>
-                <p>amodindupa@gmail.com</p>
-                <a href="mailto:amodindupa@gmail.com">Send Email</a>
-              </div>
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-details"><h3>Email</h3><p>amodindupa@gmail.com</p><a href="mailto:amodindupa@gmail.com">Send Email</a></div>
             </div>
-            
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Phone</h3>
-                <p>+94 76 677 3745</p>
-                <a href="tel:+94771234567">Call Now</a>
-              </div>
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact-details"><h3>Phone</h3><p>+94 76 677 3745</p><a href="tel:+94766773745">Call Now</a></div>
             </div>
-            
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Location</h3>
-                <p>Galle, Sri Lanka</p>
-                <a href="https://maps.google.com/?q=Galle,Sri+Lanka" target="_blank">View on Map</a>
-              </div>
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-details"><h3>Location</h3><p>Galle, Sri Lanka</p><a href="https://maps.google.com/?q=Galle,Sri+Lanka" target="_blank">View on Map</a></div>
             </div>
-            
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-calendar"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Availability</h3>
-                <p>Available for Projects</p>
-                <a href="#experience">View My Work</a>
-              </div>
+              <div class="contact-icon"><i class="fas fa-calendar-check"></i></div>
+              <div class="contact-details"><h3>Availability</h3><p>Open for Projects</p><a href="#experience">View My Work</a></div>
             </div>
           </div>
-          
           <div class="contact-form">
-            <h3>Send me a Message</h3>
+            <h3>Send Me a Message</h3>
             <form id="contactForm">
-              <div class="form-group">
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
+              <div class="form-row">
+                <div class="form-group"><input type="text" name="name" placeholder="Your Name" required /></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Your Email" required /></div>
               </div>
-              <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-              </div>
-              <div class="form-group">
-                <input type="text" id="subject" name="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group">
-                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-              </div>
-              <button type="submit" class="submit-btn">
-                <span>Send Message</span>
-                <i class="fas fa-paper-plane"></i>
-              </button>
+              <div class="form-group"><input type="text" name="subject" placeholder="Subject" required /></div>
+              <div class="form-group"><textarea name="message" placeholder="Your Message" rows="5" required></textarea></div>
+              <button type="submit" class="submit-btn"><span>Send Message</span><i class="fas fa-paper-plane"></i></button>
             </form>
           </div>
         </div>
       </div>
     </section>
-    
-    <!-- Copyright Notice -->
-    <div class="copyright-notice">
+
+    <footer class="footer">
       <div class="container">
-        <p>copy 2025 Amod Indupa. All rights reserved.</p>
+        <p>&copy; 2025 <span>Amod Indupa</span>. All rights reserved. Built with <i class="fas fa-heart" style="color:#ff6584"></i></p>
       </div>
-    </div>
+    </footer>
+
   </main>
 
+  <div id="notification-container"></div>
   <script src="script.js"></script>
-  <!-- Notification Container -->
-<div id="notification-container"></div>
-
-<style>
-/* Notification Styles */
-#notification-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-}
-
-.notification {
-  display: flex;
-  align-items: center;
-  min-width: 250px;
-  margin-bottom: 10px;
-  padding: 15px 20px;
-  border-radius: 10px;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  opacity: 0;
-  transform: translateX(100%);
-  animation: slideIn 0.5s forwards, fadeOut 0.5s 3.5s forwards;
-}
-
-.notification.success { background: #28a745; }
-.notification.error   { background: #dc3545; }
-
-.notification i {
-  margin-right: 10px;
-}
-
-/* Animations */
-@keyframes slideIn {
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes fadeOut {
-  to { opacity: 0; transform: translateX(100%); }
-}
-</style>
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  // Initialize EmailJS with your public key
-  emailjs.init('98tA3GrZ8CKCHsRoe');
-
-  // Function to show notifications
-  function showNotification(message, type = 'success') {
-    const container = document.getElementById('notification-container');
-    const notif = document.createElement('div');
-    notif.className = `notification ${type}`;
-    notif.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
-    container.appendChild(notif);
-
-    setTimeout(() => {
-      notif.remove();
-    }, 4000);
-  }
-
-  // EmailJS form submission
-  document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Basic validation
-        const name = this.name.value.trim();
-        const email = this.email.value.trim();
-        const subject = this.subject.value.trim();
-        const message = this.message.value.trim();
-
-        if (!name || !email || !subject || !message) {
-          showNotification('Please fill in all fields.', 'error');
-          return;
-        }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-          showNotification('Please enter a valid email address.', 'error');
-          return;
-        }
-
-        const submitBtn = this.querySelector('.submit-btn');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
-        submitBtn.disabled = true;
-
-        emailjs.sendForm('service_0fe7u5s', 'template_a11y5na', this, '98tA3GrZ8CKCHsRoe')
-          .then(() => {
-            showNotification("Message sent successfully! I'll get back to you soon.", 'success');
-            contactForm.reset();
-          })
-          .catch((error) => {
-            console.error('EmailJS Error:', error);
-            showNotification('Oops! Something went wrong. Please try again.', 'error');
-          })
-          .finally(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-          });
-      });
-    }
-  });
-</script>
-
 </body>
 </html>
-
-
-
